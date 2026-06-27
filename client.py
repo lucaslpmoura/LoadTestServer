@@ -7,10 +7,10 @@ port = "8080"
 URL = f"http://{addr}:{port}/"
 
 
-req_rate = 10 # req/s
+req_rate = 1 # req/s
 req_interval = 1 / req_rate # s/req (intervalo entre req.)
 
-T = 30 # tempo em segundos do teste
+T = 60 # tempo em segundos do teste
 N = req_rate * T # numero de requsições totais
 
 def request():
@@ -39,7 +39,7 @@ with ThreadPoolExecutor(max_workers=100) as executor:
             next = time.perf_counter()
 
         N = N - 1
-        if(N % 100 == 0):
+        if(N % 10 == 0):
             print(f"{N} request remaining.")
 
         if N <= 0:
