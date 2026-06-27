@@ -4,10 +4,10 @@ import time
 
 addr = "162.35.172.66"
 port = "8080"
-URL = f"http://{addr}:{port}/"
+URL = f"http://{addr}:{port}/5kB"
 
 
-req_rate = 1 # req/s
+req_rate = 5 # req/s
 req_interval = 1 / req_rate # s/req (intervalo entre req.)
 
 T = 60 # tempo em segundos do teste
